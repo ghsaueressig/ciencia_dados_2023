@@ -40,3 +40,29 @@ while linha!="":
     print(linha)
   else: # se linha é vazia
     break #sai fora do laço de repetição
+f.close()#fecha o arquivo
+
+"""Para escrever em um arquivo, usamos os comandos write(v) escreve v, onde v é uma string ou um byte writelines(list) escreve uma lista de strings.
+Vamos fazer um programa que escreve a tabuada do 7.
+"""
+
+#cria um arquivo texto de escrita
+f=open("tabuada7.txt","wt")
+f.write("tabuada do 7:")
+
+for i in range(10):
+  linha="7x"+str(i)+" = "+str(i*7)+"\n"
+  f.write(linha)
+f.close()
+
+"""Isso também é possível utilizando o writelines()."""
+
+texto=[]
+for i in range(10):
+  linha="8x"+str(i)+" = "+str(i*8)+"\n"
+  texto.append(linha)
+
+f=open("tabuada8.txt","wt")
+f.write("tabuada do 8: \n")
+f.writelines(texto)
+f.close()
